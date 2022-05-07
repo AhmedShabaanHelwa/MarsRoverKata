@@ -15,7 +15,7 @@ public class MarsRoverShould
         // Arrange - (G)iven - To arrange your setup for the test
         var marsRover = new MarsRover(initialState: intialState);
         // Act - (W)hen - To Act on your unit
-        var result = marsRover.Execute(command: "");
+        var result = marsRover.Execute(commands: "");
         // Assert - (T)hat - To verify your test.
         result.Should().Be(intialState);
     }
@@ -28,7 +28,7 @@ public class MarsRoverShould
         // Arrange
         var marsRover = new MarsRover(initialState);
         // Act
-        var result = marsRover.Execute(command: "M");
+        var result = marsRover.Execute(commands: "M");
         // Assert
         result.Should().Be(finalState); // Shold be on direction in Y-Axis
     }
