@@ -2,13 +2,11 @@
 
 public class MarsRover
 {
-    public MarsRover(string initialState)
-    {
-
-    }
+    private string _InittialState;
+    public MarsRover(string initialState) => _InittialState = initialState;
 
     public string Execute(string commands)
     {
-        return "0:0:N";
+        return _InittialState;
     }
 }
