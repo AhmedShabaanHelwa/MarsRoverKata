@@ -17,17 +17,4 @@ public class MarsRoverShould
         // Assert - (T)hat - To verify your test.
         result.Should().Be("0:0:N");
     }
-
-    public class MarsRover
-    {
-        public MarsRover(string initialState)
-        {
-
-        }
-
-        internal string Execute(string commands)
-        {
-            return "0:0:N";
-        }
-    }
 }
