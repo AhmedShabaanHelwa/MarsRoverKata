@@ -19,4 +19,15 @@ public class MarsRoverShould
         // Assert - (T)hat - To verify your test.
         result.Should().Be(intialState);
     }
+
+    [Fact]
+    public void MoveFoward()
+    {
+        // Arrange
+        var marsRover = new MarsRover("0:0:N");
+        // Act
+        var result = marsRover.Execute(commands: "M");
+        // Assert
+        result.Should().Be("0:1:N"); // Shold be on direction in Y-Axis
+    }
 }
