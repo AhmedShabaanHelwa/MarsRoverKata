@@ -7,24 +7,16 @@ namespace MarsRover.Tests;
 /// </remarks>
 public class MarsRoverShould
 {
-    [Fact]
-    public void PrintInitialStateFromCenterPosition()
+    [Theory]
+    [InlineData("0:0:N")]
+    [InlineData("4:2:w")]
+    public void PrintInitialState(string intialState)
     {
         // Arrange - (G)iven - To arrange your setup for the test
-        var marsRover = new MarsRover(initialState: "0:0:N");
+        var marsRover = new MarsRover(initialState: intialState);
         // Act - (W)hen - To Act on your unit
         var result = marsRover.Execute(commands: "");
         // Assert - (T)hat - To verify your test.
-        result.Should().Be("0:0:N");
-    }
-    [Fact]
-    public void PrintInitialStateFromNoneCentericPosition()
-    {
-        // Arrange - (G)iven - To arrange your setup for the test
-        var marsRover = new MarsRover(initialState: "4:2:W");
-        // Act - (W)hen - To Act on your unit
-        var result = marsRover.Execute(commands: "");
-        // Assert - (T)hat - To verify your test.
-        result.Should().Be("4:2:W");
+        result.Should().Be(intialState);
     }
 }
