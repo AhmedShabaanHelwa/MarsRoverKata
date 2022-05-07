@@ -20,14 +20,16 @@ public class MarsRoverShould
         result.Should().Be(intialState);
     }
 
-    [Fact]
-    public void MoveFoward()
+    [Theory]
+    [InlineData("0:0:N", "0:1:N")]
+    [InlineData("3:6:N", "3:7:N")]
+    public void MoveFoward(string initialState, string finalState)
     {
         // Arrange
-        var marsRover = new MarsRover("0:0:N");
+        var marsRover = new MarsRover(initialState);
         // Act
         var result = marsRover.Execute(commands: "M");
         // Assert
-        result.Should().Be("0:1:N"); // Shold be on direction in Y-Axis
+        result.Should().Be(finalState); // Shold be on direction in Y-Axis
     }
 }
