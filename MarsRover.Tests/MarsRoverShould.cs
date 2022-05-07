@@ -22,7 +22,9 @@ public class MarsRoverShould
 
     [Theory]
     [InlineData("0:0:N", "0:1:N")]
-    [InlineData("3:6:N", "3:7:N")]
+    [InlineData("3:6:N", "3:7:N")] // Towrds North, from a random point
+    [InlineData("3:6:W", "2:6:W")] // Towards West
+    [InlineData("3:6:E", "4:6:E")] // Towards East
     public void MoveFoward(string initialState, string finalState)
     {
         // Arrange
@@ -30,6 +32,6 @@ public class MarsRoverShould
         // Act
         var result = marsRover.Execute(commands: "M");
         // Assert
-        result.Should().Be(finalState); // Shold be on direction in Y-Axis
+        result.Should().Be(finalState);
     }
 }
