@@ -17,11 +17,13 @@ public class MarsRover
         if (commands == "M")
         {
             // In North direction
-            if (direction == "N") return $"{x}:{y + 1}:{direction}";
+            if (direction == "N") y++;
             // In West Direction
-            if (direction == "W") return $"{x - 1}:{y}:{direction}";
+            if (direction == "W") x--;
+            // In East Direction
+            if (direction == "E") x++;
         }
 
-        return _InittialState;
+        return $"{x}:{y}:{direction}";
     }
 }
