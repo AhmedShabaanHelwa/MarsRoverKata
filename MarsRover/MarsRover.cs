@@ -2,28 +2,45 @@
 
 public class MarsRover
 {
-    private string _InittialState;
-    public MarsRover(string initialState) => _InittialState = initialState;
+    private readonly string _InittialState;
+    private readonly Position _Position;
+    public MarsRover(string initialState)
+    {
+        _InittialState = initialState;
+        _Position = new Position();
+    }
 
     public string Execute(string commands)
     {
         // Parsing the command
         string[] states = _InittialState.Split(':');
-        int x = int.Parse(states[0]);
-        int y = int.Parse(states[1]);
+        _Position._x = int.Parse(states[0]);
+        _Position._y = int.Parse(states[1]);
         string direction = states[2];
 
         // Forward
         if (commands == "M")
         {
-            // In North direction
-            if (direction == "N") y++;
-            // In West Direction
-            if (direction == "W") x--;
-            // In East Direction
-            if (direction == "E") x++;
+            switch (direction)
+            {
+                // In North direction
+                case "N": _Position._y++;
+                    break;
+                // In West Direction
+                case "W": _Position._x--;
+                    break;
+                // In East Direction
+                case "E": _Position._x++; 
+                    break;
+            }
         }
 
-        return $"{x}:{y}:{direction}";
+        return $"{_Position._x}:{_Position._y}:{direction}";
+    }
+
+    class Position
+    {
+        internal int _x;
+        internal int _y;
     }
 }
