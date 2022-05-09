@@ -23,6 +23,9 @@ namespace MarsRover
                 // In East Direction
                 case "E":
                     return new East();
+                // In South Direction
+                case "S":
+                    return new South();
                 default:
                     throw new NotSupportedException(message: $"Direction {direction} is not supported!");
             }
