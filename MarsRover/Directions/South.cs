@@ -1,4 +1,4 @@
-﻿namespace MarsRover
+﻿namespace MarsRover.Directions
 {
     internal class South : IDirection
     {
