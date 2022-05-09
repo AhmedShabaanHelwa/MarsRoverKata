@@ -25,6 +25,7 @@ public class MarsRoverShould
     [InlineData("3:6:N", "3:7:N")] // Towrds North, from a random point
     [InlineData("3:6:W", "2:6:W")] // Towards West
     [InlineData("3:6:E", "4:6:E")] // Towards East
+    [InlineData("3:6:S", "3:5:S")] // Towards South
     public void MoveFoward(string initialState, string finalState)
     {
         // Arrange
