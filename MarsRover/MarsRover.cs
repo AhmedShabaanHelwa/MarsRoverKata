@@ -30,12 +30,3 @@ public class MarsRover
         return $"{_Position._x}:{_Position._y}:{directionStringCommand}";
     }
 }
-
-/// <summary>
-/// Value object to hold position of the rover
-/// </summary>
-internal class Position
-{
-    internal int _x;
-    internal int _y;
-}
