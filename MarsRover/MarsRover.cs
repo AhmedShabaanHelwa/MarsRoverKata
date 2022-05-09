@@ -9,17 +9,16 @@ public class MarsRover
     public MarsRover(string initialState)
     {
         _InittialState = initialState;
-        _Position = new Position();
     }
 
     public string Execute(string commands)
     {
         // Parsing the command
         string[] states = _InittialState.Split(':');
-        _Position._x = int.Parse(states[0]);
-        _Position._y = int.Parse(states[1]);
+        int x = int.Parse(states[0]);
+        int y = int.Parse(states[1]);
         string directionStringCommand = states[2];
-
+        _Position = new Position(x,y);
         // Forward
         if (commands == "M")
         {
@@ -27,6 +26,6 @@ public class MarsRover
             _Position = _Direction.MoveForward(_Position);
         }
 
-        return $"{_Position._x}:{_Position._y}:{directionStringCommand}";
+        return $"{_Position.X}:{_Position.Y}:{directionStringCommand}";
     }
 }

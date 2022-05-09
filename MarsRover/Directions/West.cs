@@ -9,6 +9,6 @@
         /// <remarks>
         /// it acts on the same object position
         /// </remarks>
-        public Position MoveForward(Position position) => new(position._x - 1, position._y);
+        public Position MoveForward(Position position) => new(position.X - 1, position.Y);
     }
 }

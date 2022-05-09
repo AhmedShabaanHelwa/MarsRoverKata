@@ -5,12 +5,8 @@
 /// </summary>
 internal class Position
 {
-    internal int _x;
-    internal int _y;
-    // Default constructor
-    public Position() 
-    { 
-        
-    }
-    public Position(int x, int y) => (this._x, this._y) = (x, y);
+    internal readonly int X;
+    internal readonly int Y;
+
+    public Position(int x, int y) => (this.X, this.Y) = (x, y);
 }
