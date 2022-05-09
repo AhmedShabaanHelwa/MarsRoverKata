@@ -24,18 +24,51 @@ public class MarsRover
             switch (direction)
             {
                 // In North direction
-                case "N": _Position._y++;
+                case "N":
+                    MoveNorth();
                     break;
                 // In West Direction
-                case "W": _Position._x--;
+                case "W":
+                    MoveWest();
                     break;
                 // In East Direction
-                case "E": _Position._x++; 
+                case "E":
+                    MoveEast();
                     break;
             }
         }
 
         return $"{_Position._x}:{_Position._y}:{direction}";
+    }
+    /// <summary>
+    /// Move one step to the east.
+    /// </summary>
+    /// <remarks>
+    /// it acts on the same object position
+    /// </remarks>
+    private void MoveEast()
+    {
+        _Position._x++;
+    }
+    /// <summary>
+    /// Move one step to the West.
+    /// </summary>
+    /// <remarks>
+    /// it acts on the same object position
+    /// </remarks>
+    private void MoveWest()
+    {
+        _Position._x--;
+    }
+    /// <summary>
+    /// Move one step to the North.
+    /// </summary>
+    /// <remarks>
+    /// it acts on the same object position
+    /// </remarks>
+    private void MoveNorth()
+    {
+        _Position._y++;
     }
 
     class Position
