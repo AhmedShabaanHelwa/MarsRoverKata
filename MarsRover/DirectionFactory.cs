@@ -12,23 +12,18 @@ namespace MarsRover
         /// <returns></returns>
         internal static IDirection CreateFrom(string direction)
         {
-            switch (direction)
+            return direction switch
             {
                 // In North direction
-                case "N":
-                    return new North();
+                "N" => new North(),
                 // In West Direction
-                case "W":
-                    return new West();
+                "W" => new West(),
                 // In East Direction
-                case "E":
-                    return new East();
+                "E" => new East(),
                 // In South Direction
-                case "S":
-                    return new South();
-                default:
-                    throw new NotSupportedException(message: $"Direction {direction} is not supported!");
-            }
+                "S" => new South(),
+                _ => throw new NotSupportedException(message: $"Direction {direction} is not supported!"),
+            };
         }
     }
 }
