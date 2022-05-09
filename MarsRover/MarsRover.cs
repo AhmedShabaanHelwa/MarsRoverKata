@@ -4,6 +4,7 @@ namespace MarsRover;
 public class MarsRover
 {
     private readonly string _InittialState;
+    private IDirection _Direction;
     private Position _Position;
     public MarsRover(string initialState)
     {
@@ -26,15 +27,18 @@ public class MarsRover
             {
                 // In North direction
                 case "N":
-                    _Position = new North().MoveForward(_Position);
+                    _Direction = new North();
+                    _Position = _Direction.MoveForward(_Position);
                     break;
                 // In West Direction
                 case "W":
-                    _Position = new West().MoveForward(_Position);
+                    _Direction = new West();
+                    _Position = _Direction.MoveForward(_Position);
                     break;
                 // In East Direction
                 case "E":
-                    _Position = new East().MoveForward(_Position);
+                    _Direction = new East();
+                    _Position = _Direction.MoveForward(_Position);
                     break;
             }
         }
