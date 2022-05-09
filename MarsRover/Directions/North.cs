@@ -10,8 +10,7 @@
         /// </remarks>
         public Position MoveForward(Position position)
         {
-            position._y++;
-            return position;
+            return new (position._x, position._y + 1);
         }
     }
 }
