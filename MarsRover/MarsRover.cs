@@ -18,32 +18,16 @@ public class MarsRover
         string[] states = _InittialState.Split(':');
         _Position._x = int.Parse(states[0]);
         _Position._y = int.Parse(states[1]);
-        string direction = states[2];
+        string directionStringCommand = states[2];
 
         // Forward
         if (commands == "M")
         {
-            switch (direction)
-            {
-                // In North direction
-                case "N":
-                    _Direction = new North();
-                    _Position = _Direction.MoveForward(_Position);
-                    break;
-                // In West Direction
-                case "W":
-                    _Direction = new West();
-                    _Position = _Direction.MoveForward(_Position);
-                    break;
-                // In East Direction
-                case "E":
-                    _Direction = new East();
-                    _Position = _Direction.MoveForward(_Position);
-                    break;
-            }
+            _Direction = DirectionFactory.CreateFrom(directionStringCommand);
+            _Position = _Direction.MoveForward(_Position);
         }
 
-        return $"{_Position._x}:{_Position._y}:{direction}";
+        return $"{_Position._x}:{_Position._y}:{directionStringCommand}";
     }
 }
 
