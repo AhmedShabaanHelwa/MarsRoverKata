@@ -8,6 +8,6 @@ namespace MarsRover
 {
     internal interface IDirection
     {
-        
+        Position MoveForward(Position position);
     }
 }

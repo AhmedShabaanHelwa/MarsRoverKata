@@ -26,15 +26,15 @@ public class MarsRover
             {
                 // In North direction
                 case "N":
-                    _Position = North.MoveForward(_Position);
+                    _Position = new North().MoveForward(_Position);
                     break;
                 // In West Direction
                 case "W":
-                    _Position = West.MoveForward(_Position);
+                    _Position = new West().MoveForward(_Position);
                     break;
                 // In East Direction
                 case "E":
-                    _Position = East.MoveForward(_Position);
+                    _Position = new East().MoveForward(_Position);
                     break;
             }
         }
