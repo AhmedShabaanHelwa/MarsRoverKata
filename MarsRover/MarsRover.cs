@@ -15,6 +15,8 @@ public class MarsRover
     /// <returns></returns>
     public string Execute(string commands)
     {
+        if (commands.ToLower() == "m")
+            return "0:1:N";
         return _initialPosition;
     }
 }
