@@ -7,7 +7,7 @@ public class MarsRoverShould
 {
     [Theory]
     [InlineData("0:0:N")] // Centric position
-    [InlineData("6:4:W")] //
+    [InlineData("6:4:W")] // Non-Centric Position
     internal void PrintInitialState(string initialState)
     {
         // Arrange

@@ -2,13 +2,19 @@
 
 public class MarsRover
 {
+    private readonly string _initialPosition;
+
     public MarsRover(string initialPosition)
     {
-        
+        _initialPosition = initialPosition;
     }
-
+    /// <summary>
+    /// Execute function of command pattern
+    /// </summary>
+    /// <param name="commands">Accepted commands to execute</param>
+    /// <returns></returns>
     public string Execute(string commands)
     {
-        return "0:0:N";
+        return _initialPosition;
     }
 }
