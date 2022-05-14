@@ -17,4 +17,16 @@ public class MarsRoverShould
         // Assert
         result.Should().Be(initialState);
     }
+
+    [Theory]
+    [InlineData("0:0:N")]
+    internal void MoveForward(string initialPosition)
+    {
+        // Arrange
+        MarsRover marsRover = new(initialPosition);
+        // Act
+        string result = marsRover.Execute("M");
+        // Assert
+        result.Should().Be("0:1:N");
+    }
 }
