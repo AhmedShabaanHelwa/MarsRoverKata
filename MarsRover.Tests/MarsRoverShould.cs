@@ -37,7 +37,7 @@ public class MarsRoverShould
     }
     
     [Theory]
-    [InlineData("0:0:N", "R", "0:1:E")] // From North, Should be East.
+    [InlineData("0:0:N", "R", "0:0:E")] // From North, Should be East.
     public void TurnRight(string initialState, string commands ,string expectedFinalState)
     {
         // Arrange

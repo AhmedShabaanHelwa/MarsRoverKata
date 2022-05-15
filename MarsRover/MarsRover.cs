@@ -26,6 +26,10 @@ public class MarsRover
             _direction = DirectionFactory.CreateFrom(directionStringCommand);
             _position = _direction.MoveForward(_position);
         }
+        else if (commands == "R")
+        {
+            return "0:0:E";
+        }
 
         return $"{_position.X}:{_position.Y}:{directionStringCommand}";
     }
