@@ -18,4 +18,6 @@ internal class North : IDirection
     /// </summary>
     /// <returns>Direction in string format</returns>
     public string AsStringCommand() => "N";
+
+    public IDirection ToRight() => new East();
 }

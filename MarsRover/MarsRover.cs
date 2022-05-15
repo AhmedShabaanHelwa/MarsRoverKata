@@ -28,14 +28,14 @@ public class MarsRover
         }
         else if (commands == "R")
         {
-            if(directionStringCommand == "N")
-                return "0:0:E";
+            if (directionStringCommand == "N")
+                _direction = _direction.ToRight();
             else if (directionStringCommand == "E")
-                return "7:3:S";
+                _direction = _direction.ToRight();
             else if (directionStringCommand == "S")
-                return "7:3:W";
+                _direction = _direction.ToRight();
             else if (directionStringCommand == "W")
-                return "7:3:N";
+                _direction = _direction.ToRight();
         }
 
         return $"{_position.X}:{_position.Y}:{_direction.AsStringCommand()}";

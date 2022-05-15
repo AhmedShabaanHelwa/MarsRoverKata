@@ -19,4 +19,6 @@ internal class West : IDirection
     /// </summary>
     /// <returns>Direction in string format</returns>
     public string AsStringCommand() => "W";
+
+    public IDirection ToRight() => new North();
 }

@@ -16,4 +16,6 @@ internal interface IDirection
     /// </summary>
     /// <returns>Direction in string format</returns>
     string AsStringCommand();
+
+    IDirection ToRight();
 }

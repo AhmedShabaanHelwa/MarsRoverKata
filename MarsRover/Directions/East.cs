@@ -18,4 +18,6 @@ internal class East : IDirection
     /// </summary>
     /// <returns>Direction in string format</returns>
     public string AsStringCommand() => "E";
+
+    public IDirection ToRight() => new South();
 }
