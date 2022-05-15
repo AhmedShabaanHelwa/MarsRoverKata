@@ -1,3 +1,4 @@
+using System.Runtime.InteropServices;
 using FluentAssertions;
 using Xunit;
 
@@ -20,6 +21,9 @@ public class MarsRoverShould
     [InlineData("3:6:S", "M", "3:5:S")] // Towards South
     /* Feature 3: Turn Right */
     [InlineData("0:0:N", "R", "0:0:E")] // From North, Should be East.
+    [InlineData("7:3:E", "R", "7:3:S")] // From East, Should be South.
+    [InlineData("7:3:S", "R", "7:3:W")] // From South. Should be West.
+    [InlineData("7:3:W", "R", "7:3:N")] // From West, Should be North.
     public void ExecuteCommands(string initialState, string commands, string expectedFinalState)
     {
         // Arrange
