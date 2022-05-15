@@ -31,6 +31,10 @@ public class MarsRover
         {
             _direction = _direction.ToRight();
         }
+        else if (commands == "L")
+        {
+            _direction = _direction.ToLeft();
+        }
 
         return $"{_position.X}:{_position.Y}:{_direction.AsStringCommand()}";
     }
