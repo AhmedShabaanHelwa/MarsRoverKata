@@ -8,7 +8,7 @@ namespace MarsRover
         /// <summary>
         /// Direction factory to create the proper concrete implementation of IDirection
         /// </summary>
-        /// <param name="direction">Stringfied direction</param>
+        /// <param name="direction">Stringed direction</param>
         /// <returns></returns>
         internal static IDirection CreateFrom(string direction)
         {

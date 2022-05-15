@@ -1,13 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿namespace MarsRover.Directions;
 
-namespace MarsRover
+/// <summary>
+/// Direction interface.
+/// </summary>
+internal interface IDirection
 {
-    internal interface IDirection
-    {
-        Position MoveForward(Position position);
-    }
+    /// <summary>
+    /// Move the rover one step forward
+    /// </summary>
+    /// <param name="position">Initial position of the rover</param>
+    /// <returns>New position of the rover after moving one step forward</returns>
+    Position MoveForward(Position position);
 }
