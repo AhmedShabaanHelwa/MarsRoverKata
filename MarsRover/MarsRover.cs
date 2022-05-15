@@ -20,10 +20,10 @@ public class MarsRover
         int y = int.Parse(states[1]);
         string directionStringCommand = states[2];
         _position = new Position(x,y);
+        _direction = DirectionFactory.CreateFrom(directionStringCommand);
         // Forward
         if (commands == "M")
         {
-            _direction = DirectionFactory.CreateFrom(directionStringCommand);
             _position = _direction.MoveForward(_position);
         }
         else if (commands == "R")
@@ -38,6 +38,6 @@ public class MarsRover
                 return "7:3:N";
         }
 
-        return $"{_position.X}:{_position.Y}:{directionStringCommand}";
+        return $"{_position.X}:{_position.Y}:{_direction.AsStringCommand()}";
     }
 }

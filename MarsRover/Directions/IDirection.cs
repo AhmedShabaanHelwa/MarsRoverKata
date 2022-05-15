@@ -11,4 +11,9 @@ internal interface IDirection
     /// <param name="position">Initial position of the rover</param>
     /// <returns>New position of the rover after moving one step forward</returns>
     Position MoveForward(Position position);
+    /// <summary>
+    /// Returns the direction as string.
+    /// </summary>
+    /// <returns>Direction in string format</returns>
+    string AsStringCommand();
 }

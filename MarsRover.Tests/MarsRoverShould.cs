@@ -12,7 +12,7 @@ public class MarsRoverShould
     [Theory]
     /* Feature 1: Initial State commands (Empty Command) */
     [InlineData("0:0:N", "", "0:0:N")] // Initial state: The center.
-    [InlineData("4:2:w", "", "4:2:w")] // Non-centric initial state.
+    [InlineData("4:2:W", "", "4:2:W")] // Non-centric initial state.
     /* Feature 2: Move forward */
     [InlineData("0:0:N", "M", "0:1:N")] // Towards North, from the center.
     [InlineData("3:6:N", "M", "3:7:N")] // Towards North, from a random point
