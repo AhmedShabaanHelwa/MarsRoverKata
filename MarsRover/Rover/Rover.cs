@@ -17,13 +17,6 @@ internal class Rover
     /// </summary>
     /// <returns>New instance of the turned rover left.</returns>
     public Rover TurnLeft() => new Rover(_position, _direction.ToLeft());
-    
-    /// <summary>
-    /// Turns the rover left.
-    /// </summary>
-    /// <returns>New instance of the turned rover right.</returns>
-    
-    public Rover TurnRight() => new Rover(_position, _direction.ToRight());
 
     public Rover Apply(ICommand command)
     {
@@ -33,5 +26,10 @@ internal class Rover
     private Rover ApplyCommand(MoveForwardCommand moveForwardCommand)
     {
         return new Rover(_direction.MoveForward(_position), _direction);
+    }
+
+    private Rover ApplyCommand(TurnRightCommand turnRightCommand)
+    {
+        return  new Rover(_position, _direction.ToRight());
     }
 }
