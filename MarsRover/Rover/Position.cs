@@ -8,5 +8,5 @@ internal class Position
     internal readonly int X;
     internal readonly int Y;
 
-    public Position(int x, int y) => (this.X, this.Y) = (x, y);
+    public Position(int x, int y) => (X, Y) = (x, y);
 }
