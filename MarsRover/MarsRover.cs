@@ -8,13 +8,11 @@ namespace MarsRover;
 /// </summary>
 public class MarsRover
 {
-    private readonly string _initialState;
     private Rover.Rover _rover;
 
     public MarsRover(string initialState)
     {
-        _initialState = initialState;
-        _rover = RoverFactory.CreatFromInitialState(_initialState);
+        _rover = RoverFactory.CreatFromInitialState(initialState);
     }
 
     public string Execute(string commandsString)
