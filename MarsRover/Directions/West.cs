@@ -1,4 +1,6 @@
-﻿namespace MarsRover.Directions;
+﻿using MarsRover.Rover;
+
+namespace MarsRover.Directions;
 
 /// <summary>
 /// West direction class

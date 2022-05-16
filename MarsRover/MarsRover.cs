@@ -1,4 +1,4 @@
-﻿using MarsRover.Directions;
+﻿using MarsRover.Rover;
 
 namespace MarsRover;
 /// <summary>
@@ -7,7 +7,7 @@ namespace MarsRover;
 public class MarsRover
 {
     private readonly string _initialState;
-    private Rover _rover;
+    private Rover.Rover _rover;
 
     public MarsRover(string initialState)
     {

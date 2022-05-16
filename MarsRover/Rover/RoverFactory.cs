@@ -1,4 +1,6 @@
-﻿namespace MarsRover.Directions;
+﻿using MarsRover.Directions;
+
+namespace MarsRover.Rover;
 /// <summary>
 /// Rover factory to create a rover
 /// </summary>
