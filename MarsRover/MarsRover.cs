@@ -22,19 +22,8 @@ public class MarsRover
     {
         commandsString.ToCharArray().ToList().ForEach(c =>
         {
-            if (c == 'M')
-            {
-                _command = new MoveForwardCommand();
-            }
-            else if (c == 'R')
-            {
-                _command = new TurnRightCommand();
-            }
-            else if (c == 'L')
-            {
-                _command = new TurnLeftCommand();
-            }
-            
+            _command = CommandsFactory.CreatFromCharacter(c);
+
             _rover = _rover.Apply(_command);
         });
         
