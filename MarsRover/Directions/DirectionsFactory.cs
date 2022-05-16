@@ -1,6 +1,4 @@
-﻿using MarsRover.Directions;
-
-namespace MarsRover.Commands
+﻿namespace MarsRover.Directions
 {
     internal static class DirectionsFactory
     {
