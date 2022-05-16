@@ -10,7 +10,6 @@ public class MarsRover
 {
     private readonly string _initialState;
     private Rover.Rover _rover;
-    private ICommand _command;
 
     public MarsRover(string initialState)
     {
