@@ -16,6 +16,21 @@ internal class Rover
     public Rover TurnRight() => new Rover(_position, _direction.ToRight());
 }
 
+internal abstract class RoverFactory
+{
+    internal static Rover CreatFromInitialState(string initialState)
+    {
+        string[] states = initialState.Split(':');
+        int x = int.Parse(states[0]);
+        int y = int.Parse(states[1]);
+        string directionStringCommand = states[2];
+        Position position = new Position(x, y);
+        IDirection direction = DirectionFactory.CreateFrom(directionStringCommand);
+
+        return new Rover(position: position, direction: direction);
+    }
+}
+
 public class MarsRover
 {
     private readonly string _initialState;
@@ -24,18 +39,11 @@ public class MarsRover
     public MarsRover(string initialState)
     {
         _initialState = initialState;
+        _rover = RoverFactory.CreatFromInitialState(_initialState);
     }
 
     public string Execute(string commands)
     {
-        // Parsing the command
-        string[] states = _initialState.Split(':');
-        int x = int.Parse(states[0]);
-        int y = int.Parse(states[1]);
-        string directionStringCommand = states[2];
-        
-        _rover = new Rover(new Position(x, y), DirectionFactory.CreateFrom(directionStringCommand));
-        
         commands.ToCharArray().ToList().ForEach(c =>
         {
             if (c == 'M')
