@@ -1,4 +1,5 @@
-﻿using MarsRover.Directions;
+﻿using MarsRover.Commands;
+using MarsRover.Directions;
 
 namespace MarsRover.Rover;
 
@@ -27,5 +28,19 @@ internal class Rover
     /// Moves the rover one move forward.
     /// </summary>
     /// <returns>New instance of the moving rover.</returns>
-    public Rover MoveForward() => new Rover(_direction.MoveForward(_position), _direction);
+    public Rover MoveForward()
+    {
+        var moveForwardCommand = new MoveForwardCommand();
+        return Apply(moveForwardCommand);
+    }
+
+    public Rover Apply(ICommand command)
+    {
+        return ApplyCommand((dynamic)command);
+    }
+
+    private Rover ApplyCommand(MoveForwardCommand moveForwardCommand)
+    {
+        return new Rover(_direction.MoveForward(_position), _direction);
+    }
 }
