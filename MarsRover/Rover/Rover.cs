@@ -24,11 +24,8 @@ internal class Rover
     /// Returns the state of this rover, in terms of position and direction.
     /// </summary>
     /// <returns>"X:Y:Direction" of this rover.</returns>
-    public string GetState()
-    {
-        return $"{Position.X}:{Position.Y}:{Direction.AsStringCommand()}";
-    }
-    
+    public string GetState() => $"{Position.X}:{Position.Y}:{Direction.AsStringCommand()}";
+
     /// <summary>
     /// Applies Move Forward command to this rover.
     /// </summary>
