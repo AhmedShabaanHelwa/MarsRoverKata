@@ -9,9 +9,8 @@ namespace MarsRover.Commands
         /// </summary>
         /// <param name="direction">Stringed direction</param>
         /// <returns>Concrete implementation of the direction</returns>
-        internal static IDirection CreateFrom(string direction)
-        {
-            return direction switch
+        internal static IDirection CreateFrom(string direction) =>
+            direction switch
             {
                 // In North direction
                 "N" => new North(),
@@ -23,6 +22,5 @@ namespace MarsRover.Commands
                 "S" => new South(),
                 _ => throw new NotSupportedException(message: $"Direction {direction} is not supported!"),
             };
-        }
     }
 }
