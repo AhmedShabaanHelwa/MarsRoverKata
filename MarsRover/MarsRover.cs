@@ -51,17 +51,17 @@ public class MarsRover
         {
             if (c == 'M')
             {
-                _position = _direction.MoveForward(_position);
+                _rover.MoveForward();
             }
             else if (c == 'R')
             {
-                _direction = _direction.ToRight();
+                _rover.TurnRight();
             }
             else if (c == 'L')
             {
-                _direction = _direction.ToLeft();
+                _rover.TurnLeft();
             }
         });
-        return $"{_position.X}:{_position.Y}:{_direction.AsStringCommand()}";
+        return $"{_rover._position.X}:{_rover._position.Y}:{_rover._direction.AsStringCommand()}";
     }
 }
