@@ -8,10 +8,10 @@ namespace MarsRover.Rover;
 /// </summary>
 internal class Rover
 {
-    internal readonly IDirection? Direction;
-    internal readonly Position? Position;
+    private readonly IDirection? _direction;
+    private readonly Position? _position;
 
-    public Rover(Position position, IDirection direction) => (Position, Direction) = (position,direction);
+    public Rover(Position position, IDirection direction) => (_position, _direction) = (position,direction);
     
     /// <summary>
     /// Applies the command to this rover.
@@ -24,26 +24,26 @@ internal class Rover
     /// Returns the state of this rover, in terms of position and direction.
     /// </summary>
     /// <returns>"X:Y:Direction" of this rover.</returns>
-    public string GetState() => $"{Position.X}:{Position.Y}:{Direction.AsStringCommand()}";
+    public string GetState() => $"{_position.X}:{_position.Y}:{_direction.AsStringCommand()}";
 
     /// <summary>
     /// Applies Move Forward command to this rover.
     /// </summary>
     /// <param name="moveForwardCommand">Concrete implementation of Move Fowrard Command.</param>
     /// <returns>New instance of rover after applying the command.</returns>
-    private Rover ApplyCommand(MoveForwardCommand moveForwardCommand) => new Rover(Direction.MoveForward(Position), Direction);
+    private Rover ApplyCommand(MoveForwardCommand moveForwardCommand) => new Rover(_direction.MoveForward(_position), _direction);
     
     /// <summary>
     /// Applies Turn Right command to this rover.
     /// </summary>
     /// <param name="turnRightCommand">Concrete implementation of Turn Right Command.</param>
     /// <returns>New instance of rover after applying the command.</returns>
-    private Rover ApplyCommand(TurnRightCommand turnRightCommand) => new Rover(Position, Direction.ToRight());
+    private Rover ApplyCommand(TurnRightCommand turnRightCommand) => new Rover(_position, _direction.ToRight());
     
     /// <summary>
     /// Applies Turn Left command to this rover.
     /// </summary>
     /// <param name="turnLeftCommand">Concrete implementation of Turn Left Command.</param>
     /// <returns>Concrete implementation of Move Fowrard Command.</returns>
-    private Rover ApplyCommand(TurnLeftCommand turnLeftCommand) => new Rover(Position, Direction.ToLeft());
+    private Rover ApplyCommand(TurnLeftCommand turnLeftCommand) => new Rover(_position, _direction.ToLeft());
 }
