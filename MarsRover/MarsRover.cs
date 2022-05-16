@@ -25,6 +25,6 @@ public class MarsRover
         
         commands.ForEach(command => _rover = _rover.Apply(command));
         
-        return $"{_rover.Position.X}:{_rover.Position.Y}:{_rover.Direction.AsStringCommand()}";
+        return _rover.GetState();
     }
 }

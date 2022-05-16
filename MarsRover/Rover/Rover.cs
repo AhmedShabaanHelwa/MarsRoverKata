@@ -21,6 +21,15 @@ internal class Rover
     public Rover Apply(ICommand command) => ApplyCommand((dynamic)command);
     
     /// <summary>
+    /// Returns the state of this rover, in terms of position and direction.
+    /// </summary>
+    /// <returns>"X:Y:Direction" of this rover.</returns>
+    public string GetState()
+    {
+        return $"{Position.X}:{Position.Y}:{Direction.AsStringCommand()}";
+    }
+    
+    /// <summary>
     /// Applies Move Forward command to this rover.
     /// </summary>
     /// <param name="moveForwardCommand">Concrete implementation of Move Fowrard Command.</param>
