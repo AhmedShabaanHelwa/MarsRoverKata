@@ -1,4 +1,5 @@
-﻿using MarsRover.Directions;
+﻿using MarsRover.Commands;
+using MarsRover.Directions;
 
 namespace MarsRover.Rover;
 /// <summary>
@@ -19,7 +20,7 @@ internal abstract class RoverFactory
         int y = int.Parse(states[1]);
         string directionStringCommand = states[2];
         Position position = new Position(x, y);
-        IDirection direction = DirectionFactory.CreateFrom(directionStringCommand);
+        IDirection direction = DirectionsFactory.CreateFrom(directionStringCommand);
 
         return new Rover(position: position, direction: direction);
     }
