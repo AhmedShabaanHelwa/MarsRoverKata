@@ -36,6 +36,6 @@ public class MarsRover
                 _rover = _rover.Apply(turnLeftCommand);
             }
         });
-        return $"{_rover._position.X}:{_rover._position.Y}:{_rover._direction.AsStringCommand()}";
+        return $"{_rover.Position.X}:{_rover.Position.Y}:{_rover.Direction.AsStringCommand()}";
     }
 }
