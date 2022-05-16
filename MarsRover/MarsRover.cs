@@ -20,12 +20,10 @@ public class MarsRover
 
     public string Execute(string commandsString)
     {
-        commandsString.ToCharArray().ToList().ForEach(c =>
-        {
-            _command = CommandsFactory.CreatFromCharacter(c);
-
-            _rover = _rover.Apply(_command);
-        });
+        var commands = 
+            commandsString.ToCharArray().Select(CommandsFactory.CreatFromCharacter).ToList();
+        
+        commands.ForEach(command => _rover = _rover.Apply(command));
         
         return $"{_rover.Position.X}:{_rover.Position.Y}:{_rover.Direction.AsStringCommand()}";
     }
