@@ -30,7 +30,8 @@ public class MarsRoverShould
     [InlineData("7:3:S", "L", "7:3:E")] // From South. Should be East.
     [InlineData("7:3:W", "L", "7:3:S")] // From West, Should be South.
     /* Feature 5: Multiple Commands */
-    [InlineData("7:3:W", "LL", "7:3:E")] // From West, Should be South.
+    [InlineData("7:3:W", "LL", "7:3:E")] // Two Turns to right.
+    [InlineData("1:1:S", "MLMLMRMMMLL", "5:1:W")] // Movements and both turning to left and right.
     public void ExecuteCommands(string initialState, string commands, string expectedFinalState)
     {
         // Arrange
