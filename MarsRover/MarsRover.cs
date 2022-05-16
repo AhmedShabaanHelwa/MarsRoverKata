@@ -18,9 +18,9 @@ public class MarsRover
         _rover = RoverFactory.CreatFromInitialState(_initialState);
     }
 
-    public string Execute(string commands)
+    public string Execute(string commandsString)
     {
-        commands.ToCharArray().ToList().ForEach(c =>
+        commandsString.ToCharArray().ToList().ForEach(c =>
         {
             if (c == 'M')
             {

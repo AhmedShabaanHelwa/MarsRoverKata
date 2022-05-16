@@ -37,7 +37,7 @@ public class MarsRoverShould
         // Arrange
         var marsRover = new MarsRover(initialState);
         // Act
-        var result = marsRover.Execute(commands: commands);
+        var result = marsRover.Execute(commandsString: commands);
         // Assert
         result.Should().Be(expectedFinalState);
     }
