@@ -32,7 +32,8 @@ public class MarsRover
             }
             else if (c == 'L')
             {
-                _rover = _rover.TurnLeft();
+                var turnLeftCommand = new TurnLeftCommand();
+                _rover = _rover.Apply(turnLeftCommand);
             }
         });
         return $"{_rover._position.X}:{_rover._position.Y}:{_rover._direction.AsStringCommand()}";
