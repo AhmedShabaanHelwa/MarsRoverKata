@@ -22,20 +22,21 @@ public class MarsRover
         string directionStringCommand = states[2];
         _position = new Position(x, y);
         _direction = DirectionFactory.CreateFrom(directionStringCommand);
-        // Forward
-        if (commands == "M")
+        commands.ToCharArray().ToList().ForEach(c =>
         {
-            _position = _direction.MoveForward(_position);
-        }
-        else if (commands == "R")
-        {
-            _direction = _direction.ToRight();
-        }
-        else if (commands == "L")
-        {
-            _direction = _direction.ToLeft();
-        }
-
+            if (c == 'M')
+            {
+                _position = _direction.MoveForward(_position);
+            }
+            else if (c == 'R')
+            {
+                _direction = _direction.ToRight();
+            }
+            else if (c == 'L')
+            {
+                _direction = _direction.ToLeft();
+            }
+        });
         return $"{_position.X}:{_position.Y}:{_direction.AsStringCommand()}";
     }
 }
