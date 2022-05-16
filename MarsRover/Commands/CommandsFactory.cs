@@ -11,14 +11,12 @@ internal abstract class CommandsFactory
     /// <param name="commandCharacter">Command character.</param>
     /// <returns>Concrete implementation of the command.</returns>
     /// <exception cref="NotSupportedException">Thrown in case of not supported command.</exception>
-    internal static ICommand CreatFromCharacter(char commandCharacter)
-    {
-        return commandCharacter switch
+    internal static ICommand CreatFromCharacter(char commandCharacter) =>
+        commandCharacter switch
         {
             'M' => new MoveForwardCommand(),
             'R' => new TurnRightCommand(),
             'L' => new TurnLeftCommand(),
             _ => throw new NotSupportedException($"Command {commandCharacter} is not supported.")
         };
-    }
 }
