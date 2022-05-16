@@ -1,6 +1,6 @@
 ﻿namespace MarsRover.Commands;
 
-internal class MoveForwardCommand
+internal class MoveForwardCommand : ICommand
 {
     
 }
