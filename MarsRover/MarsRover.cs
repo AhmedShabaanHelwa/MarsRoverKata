@@ -1,4 +1,5 @@
-﻿using MarsRover.Rover;
+﻿using MarsRover.Commands;
+using MarsRover.Rover;
 
 namespace MarsRover;
 /// <summary>
@@ -21,7 +22,8 @@ public class MarsRover
         {
             if (c == 'M')
             {
-                _rover = _rover.MoveForward();
+                var moveForwardCommand = new MoveForwardCommand();
+                _rover = _rover.Apply(moveForwardCommand);
             }
             else if (c == 'R')
             {
